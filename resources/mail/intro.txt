@@ -1,0 +1,37 @@
+Ahoj!
+
+Zadání sad se v určený čas objeví na následujících adresách:
+
+1. sada (od 15:00)
+   * http://www.fi.muni.cz/~xpelanek/interlos2/sada1/
+   * http://anna.fi.muni.cz/~xpapous1/interlos/sada1/
+   * http://interlos.zimodej.cz/sada1
+
+2. sada (od 16:30)
+   * http://www.fi.muni.cz/~xpelanek/interlos2/sada2/
+   * http://anna.fi.muni.cz/~xpapous1/interlos/sada2/
+   * http://interlos.zimodej.cz/sada2
+
+3. sada (od 18:00)
+   * http://www.fi.muni.cz/~xpelanek/interlos2/sada3/
+   * http://anna.fi.muni.cz/~xpapous1/interlos/sada3/
+   * http://interlos.zimodej.cz/sada3
+
+
+Kdykoliv je v zadání uvedeno více alternativních webových adres, obsahují všechny adresy stejnou informaci a jsou uvedeny pouze pro zálohu (nikdy tedy není žádná úmyslně skrytá informace v rozdílech mezi verzemi).
+
+V případě výpadku serveru, na kterém běží systém hry (což se nám stalo loni, ovšem pevně věříme, že letos se to již nestane), budou vystaveny "krizové informace" na následující stránce:
+
+http://www.fi.muni.cz/~xpelanek/interlos2/
+
+Na této stránce se také případně objeví upřesnění k zadání / opravy chyb (opět doufáme a věříme, že ani jedno nebude potřeba). Oznámení tohoto typu se současně objeví také na chatu na stránkách hry.
+
+A ještě několik rad:
+   * Pokud nemáte barevnou tiskárnu, mějte po ruce pastelky.
+   * Přečtěte si před hrou ještě jednou pravidla, ať máte jasno v bodování.
+   * Věnujte pozornost sekci "rady" v pravidlech.
+   * Zařazení příkladů v kategoriích (programátorské a počítačové, logické, šifry a nápadové) je pouze orientační. Klidně se může stát, že logickou úlohu vyřešíte počítačem a počítačovou úlohu tužkou.
+   * Připravte si dopředu dobrou svačinku a užijte si to.
+
+Hodně štěstí,
+Váš Interlos tým

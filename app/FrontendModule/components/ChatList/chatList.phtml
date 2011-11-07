@@ -1,0 +1,19 @@
+
+<div id="chat" class="list">
+{if Environment::getUser()->isLoggedIn()}
+    <div id="chat-form">
+	{widget chatForm}
+    </div>
+{/if}
+    
+{foreach $posts AS $post}
+    <div class="chat-item">
+	<h3>
+	    {$post['team_name']} <span style="float: right">{$post['inserted']|time}</span>
+	</h3>
+	<div class="block" id="chat">{!$post['content']|texy}</div>
+    </div>
+{/foreach}
+</div>
+
+{widget paginator}

@@ -1,0 +1,8 @@
+{extends layout.phtml}
+
+{block #subcontent}
+	{if $available}
+		<p>Statistiky nemusí být zcela aktuální. Údaje pravidelně přepočítáváme.</p>
+		{widget results}
+	{/if}
+{/block}

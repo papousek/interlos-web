@@ -1,0 +1,14 @@
+{extends layout.phtml}
+
+{block #content}
+    <div id="submenu">
+	<ul>
+	    {foreach $categories AS $category => $name}
+		<li><a href="#{$category}" title="{$name}">{$name}</a></li>
+	    {/foreach}
+	</ul>
+    </div>
+    <div id="subcontent">
+	{widget teamList}
+    </div>
+{/block}

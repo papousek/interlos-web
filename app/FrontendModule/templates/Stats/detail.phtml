@@ -1,0 +1,8 @@
+{extends ../layout.phtml}
+
+{block #body}
+	{widget flashMessages}
+	{if $available}
+		{widget scoreList}
+	{/if}
+{/block}

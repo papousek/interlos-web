@@ -1,0 +1,22 @@
+{extends ../layout.phtml}
+
+{block #content}
+<div id="submenu">
+	<ul>
+		<li><a href="{plink Game:default}" title="Zadání">Zadání</a></li>
+		{if  time() > strtotime(Interlos::getCurrentYear()->game_start) && time() <= strtotime(Interlos::getCurrentYear()->game_end)}
+			<li><a href="{plink Game:answer}" title="Odevzdat řešení">Odevzdat řešení</a></li>
+		{/if}
+		{if time() > strtotime(Interlos::getCurrentYear()->game_end)}
+			<li>
+				<a href="http://www.fi.muni.cz/~xpelanek/interlos2/reseni.pdf">Řešení</a>
+			</li>
+		{/if}
+		<li><a href="{plink Game:history}" title="Historie">Historie</a></li>
+	</ul>
+</div>
+<div id="subcontent">
+	{block #subcontent}
+	{/block}
+</div>
+{/block}

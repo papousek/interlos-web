@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="cs">
+    <head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta http-equiv="content-language" content="cs" />
+		<link rel="stylesheet" type="text/css" href="{$baseUri}css/main.css" />
+		<link rel="stylesheet" type="text/css" href="{$baseUri}css/forms.css" />
+		<link rel="stylesheet" type="text/css" href="{$baseUri}css/flashes.css" />
+		<link href="{$baseUri}favicon.png" rel="icon" type="image/png" />
+		<script type="text/javascript" src="{$baseUri}js/jquery-1.4.2.min.js"></script>
+        <script type="text/javascript" src="{$baseUri}js/jquery-ui-1.8.2.custom.min.js"></script>
+
+		<title>
+	    Interlos - {$pageTitle}
+		</title>
+
+    </head>
+    <body>
+		{block #body}
+		<!-- HEADER -->
+		<div id="header">
+			<a href="{link Default:default}" title="Interlos">
+				<div class="wrapper">
+					<div id="logo"></div>
+					<h1>Interlos</h1>
+				</div>
+			</a>
+		</div>
+		<!-- MENU -->
+		<div id="menu">
+			<div class="wrapper">
+				{if Interlos::isGameActive()}
+					{widget clock}
+				{/if}
+				<ul id="team-navigation">
+			{if Interlos::isRegistrationActive()}
+			    {if !Environment::getUser()->isLoggedIn()}
+					<li><a href="{link Team:registration}">Registrace</a></li>
+			    {/if}
+			{/if}
+			{if Interlos::isRegistrationStarted()}
+			    {if !Environment::getUser()->isLoggedIn()}
+					<li><a href="{link Default:login}">Příhlásit se</a></li>
+			    {else}
+					<li><a href="{link Default:logout}" title="Odhlásit se">Odhlásit se</a></li>
+					<li><a href="{link Team:default}" title="{=Interlos::getLoggedTeam()->name}">{=String::truncate(Interlos::getLoggedTeam()->name, 15)}</a></li>
+			    {/if}
+			{/if}
+				</ul>
+				<ul id="general-navigation">
+					<li><a href="{link Default:rules}" title="Pravidla">Pravidla</a></li>
+					<li><a href="{link Default:lastYears}" title="Minulé ročníky">Minulé ročníky</a></li>
+					<li><a href="{link Default:taskExamples}" title="Rozcvička">Rozcvička</a></li>
+				{if Interlos::isRegistrationStarted()}
+					<li><a href="{link Default:chat}" title="Diskuse">Diskuse</a></li>
+					<li><a href="{link Team:list}" title="Týmy">Týmy</a></li>
+			    {if Interlos::isGameActive()}
+					{if Environment::getUser()->isLoggedIn()}
+						<li><a href="{link Game:default}" title="Hra">Hra</a></li>
+					{/if}
+					<li><a href="{link Stats:default}" title="Statistiky">Statistiky</a></li>
+			    {/if}
+			{/if}
+				</ul>
+			</div>
+		</div>
+		<div class="wrapper">
+			<!-- PAGE TITLE -->
+			<h1>{$pageTitle}</h1>
+			<!-- FLASH MESSAGES -->
+		{widget flashMessages}
+			<!-- CONTENT -->
+			<div id="content">
+		    {block #content}{/block}
+			</div>
+		</div>
+		<div id="footer"></div>
+		{/block}
+    </body>
+</html>

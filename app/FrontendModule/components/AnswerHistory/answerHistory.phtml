@@ -1,0 +1,18 @@
+<table id="answer-history" cellspacing="0">
+	<thead>
+		<th>#</th>
+		<th>úkol</th>
+		<th>vloženo</th>
+		<th>odpověď</th>
+	</thead>
+	{foreach $history AS $answer}
+	<tr{if isset($correct[$answer->id_answer])} class="correct"{/if}>
+		<td>{$answer->id_answer}</td>
+		<td>{$tasks[$answer->id_task]->code_name}</td>
+		<td>{$answer->inserted|timeOnly}</td>
+		<td>{$answer->code}</td>
+	</tr>
+	{/foreach}
+</table>
+
+{widget paginator}

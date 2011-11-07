@@ -1,0 +1,54 @@
+<div id="score-stats-wrapper">
+	<table id="score-stats" cellspacing="0">
+	{foreach $teams AS $team}
+		{if $iterator->getCounter() % 10 == 1}
+			<tr>
+				<th>#</th>
+				<th>Tým</th>
+				<th>&sum;</th>
+				<th>+</th>
+				<th>-</th>
+				{foreach $tasks AS $task}
+					<th>{$task->code_name}</th>
+				{/foreach}
+			</tr>
+		{/if}
+		{if $iterator->getCounter() % 10 == 1 }
+			<tr>
+		{else}
+			<tr class="line">
+		{/if}
+			<td>{$iterator->getCounter()}</td>
+			<td class="team">{$team->name}</td>
+			<td>
+				{if !empty($team->score)}
+					{$team->score}
+				{else}
+					0
+				{/if}
+			</td>
+			<td>
+				{if isset($bonus[$team->id_team])}
+					{$bonus[$team->id_team]->score}
+				{else}
+					0
+				{/if}
+			</td>
+			<td>
+				{if isset($penality[$team->id_team])}
+					{$penality[$team->id_team]->score}
+				{else}
+					0
+				{/if}
+			</td>
+			{foreach $tasks AS $task}
+				{if !isset($score[$team->id_team]) || !isset($score[$team->id_team][$task->id_task]) || $score[$team->id_team][$task->id_task]->inserted == NULL}
+					<td class="empty">X</td>
+				{else}
+					<td class="done">{$score[$team->id_team][$task->id_task]->score}</td>
+				{/if}
+			{/foreach}
+		</tr>
+	{/foreach}
+	</table>
+</div>

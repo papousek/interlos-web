@@ -1,0 +1,7 @@
+<div id="flashes">
+    {foreach $component->getParent()->getTemplate()->flashes AS $flash}
+    <div class="flash {$flash->type}">
+	    {$flash->message}
+	</div>
+    {/foreach}
+</div>
